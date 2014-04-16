@@ -2,6 +2,41 @@
 
 .navbar {
 	height:64px;
-	width:100%;
 	background-color:@dankpurp;
+	color:@white;
+
+	.nav-title {
+		display:inline-block;
+		font-size:@lg-text;
+		font-family:Cinzel;
+		margin:.5% 5%;
+		float:left;
+	}
+	.nav-menu {
+		display:inline-block;
+		font-size:@md-text;
+		font-family:Roboto;
+		float:right;
+		text-align:center;
+	
+		ul {
+	
+			li {
+				display:inline-block;
+				padding:0 5%;
+				line-height:300%;
+				height:100%;
+				width:85px;
+			
+				a {
+					text-decoration:none;
+					color:@white;
+				}
+			}
+			li:hover{
+				background-color:@purp;
+				cursor:pointer;
+			}
+		}
+	}
 }

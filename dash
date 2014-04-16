@@ -27,29 +27,33 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +16 web.js
-badd +0 src/router.js
-badd +0 index.html
-badd +0 src/views/blog-layout.html
-badd +48 public/less/blog-main.less
-badd +24 public/less/blog-reset.less
+badd +18 web.js
+badd +3 src/router.js
+badd +1 index.html
+badd +1 src/views/blog-layout.html
+badd +1 public/less/blog-main.less
+badd +1 lessconfig.less
+badd +0 public/less/lessconfig.less
 args web.js
-edit web.js
+edit public/less/lessconfig.less
 set splitbelow splitright
 wincmd _ | wincmd |
-split
+vsplit
+1wincmd h
 wincmd _ | wincmd |
 split
-2wincmd k
+1wincmd k
 wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 17 + 27) / 55)
-exe '2resize ' . ((&lines * 17 + 27) / 55)
-exe '3resize ' . ((&lines * 17 + 27) / 55)
+exe '1resize ' . ((&lines * 16 + 17) / 35)
+exe 'vert 1resize ' . ((&columns * 70 + 75) / 150)
+exe '2resize ' . ((&lines * 16 + 17) / 35)
+exe 'vert 2resize ' . ((&columns * 70 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 79 + 75) / 150)
 argglobal
 setlocal keymap=
 setlocal noarabic
@@ -80,8 +84,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal noexpandtab
-if &filetype != 'javascript'
-setlocal filetype=javascript
+if &filetype != 'less'
+setlocal filetype=less
 endif
 setlocal foldcolumn=0
 setlocal foldenable
@@ -139,8 +143,8 @@ setlocal statusline=
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'javascript'
-setlocal syntax=javascript
+if &syntax != 'less'
+setlocal syntax=less
 endif
 setlocal tabstop=8
 setlocal tags=
@@ -152,15 +156,15 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 16 - ((9 * winheight(0) + 8) / 17)
+let s:l = 14 - ((13 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-16
-normal! 029l
+14
+normal! 09l
 wincmd w
 argglobal
-edit src/router.js
+edit public/less/blog-main.less
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -190,8 +194,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal noexpandtab
-if &filetype != 'javascript'
-setlocal filetype=javascript
+if &filetype != 'less'
+setlocal filetype=less
 endif
 setlocal foldcolumn=0
 setlocal foldenable
@@ -249,8 +253,8 @@ setlocal statusline=
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'javascript'
-setlocal syntax=javascript
+if &syntax != 'less'
+setlocal syntax=less
 endif
 setlocal tabstop=8
 setlocal tags=
@@ -262,11 +266,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 5 - ((2 * winheight(0) + 8) / 17)
+let s:l = 7 - ((4 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
+7
 normal! 0
 wincmd w
 argglobal
@@ -372,16 +376,19 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 5 - ((2 * winheight(0) + 8) / 17)
+let s:l = 10 - ((6 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
-normal! 05l
+10
+normal! 010l
 wincmd w
-exe '1resize ' . ((&lines * 17 + 27) / 55)
-exe '2resize ' . ((&lines * 17 + 27) / 55)
-exe '3resize ' . ((&lines * 17 + 27) / 55)
+2wincmd w
+exe '1resize ' . ((&lines * 16 + 17) / 35)
+exe 'vert 1resize ' . ((&columns * 70 + 75) / 150)
+exe '2resize ' . ((&lines * 16 + 17) / 35)
+exe 'vert 2resize ' . ((&columns * 70 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 79 + 75) / 150)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
