@@ -1,11 +1,14 @@
 @import 'lessconfig';
 
 .navbar {
+	position:absolute;
 	height:64px;
+	width:100%;
 	background-color:@dankpurp;
 	color:@white;
-
+	z-index:10;
 	.nav-title {
+		position:relative;
 		display:inline-block;
 		font-size:@lg-text;
 		font-family:Cinzel;
@@ -13,34 +16,39 @@
 		float:left;
 	}
 	.nav-menu {
+		position:relative;
 		display:inline-block;
 		font-size:@md-text;
-		font-family:Roboto;
+		font-family:Balthazar;
 		float:right;
 		text-align:center;
-	
-		ul {
-	
+		.nav-menu-list {
 			li {
 				display:inline-block;
-				padding:0 25px;
 				line-height:300%;
 				height:100%;
-				width:85px;
-			
+				width:125px;
 				a {
 					text-decoration:none;
 					color:@white;
+					display:inline-block;
+					height:100%;
+					width:100%;
+				}
+				a:hover {
+					color:@purp;
+					cursor:pointer;
 				}
 			}
-			li:hover{
-				background-color:@purp;
-				cursor:pointer;
+		}
+		.nav-meta-menu {
+			.nav-dropdown {
+				position:absolute;
+				background-color:@dankpurp;
 			}
 		}
 	}
 }
-
 .footer {
 	position:absolute;
 	bottom:0;
@@ -48,16 +56,15 @@
 	background:@lightgray;
 	color:@darkgray;
 	width:100%;
-
 	.foot-text {
+		position:relative;
 		margin:.8% 5%;
 		float:left;
 	}
-
 	.foot-logos {
+		position:relative;
 		margin:0 5%;
 		float:right;
-		
 		ul {
 			li {
 				display:inline;
