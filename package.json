@@ -13,6 +13,8 @@
     "express": "~4.0.0",
     "logfmt": "~1.1.2",
     "less-middleware": "~0.2.1-beta",
-    "hogan-express": "~0.5.2"
+    "hogan-express": "~0.5.2",
+    "underscore": "~1.6.0",
+    "bcrypt": "~0.7.7"
   }
 }
