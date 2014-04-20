@@ -2,47 +2,51 @@
 	<title>EpiBlog</title>
 	<link href='/less/blog-reset.css' rel='stylesheet' type='text/css'/>
 	<link href='/less/blog-main.css' rel='stylesheet' type='text/css'/>
+  {{{yield-styles}}}
 	<script src='http://code.jquery.com/jquery-1.11.0.min.js'></script>
 	<script src='/scripts/blog-main.js'></script>
+  {{{yield-scripts}}}
 </head>
 <body>
-	<div class='navbar'>
-		<div class='nav-title'>
-			<strong>Epiblog</strong>
-		</div>
-		<div class='nav-menu'>
-			<ul class='nav-menu-list'>
-				<li>
-					<a href=''>Blog</a>
-				</li>
-				<li class='nav-meta-menu'>
-					<a id='appstab' href=''>Apps</a>
-					<ul id='appsdropdown' class='nav-dropdown'>
-						<li>
-							<a href='http://www.epihedron.com'>Adventurer</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href='http://www.bullstudio.co'>Music</a>
-				</li>
-				<li>
-					<a href=''>Contact</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div>
-		{{{yield}}}
-	</div>
-	<div class='footer'>
-		<div class='foot-text'>
-			Epihedron
-		</div>
-		<div class='foot-logos'>
-			<ul>
-				<a href='https://www.github.com/13ruce1337/epiblog'><li><img src='/imgs/github.png' width='40' height='40'/></li></a>
-			</ul>
-		</div>
-	</div>
+  <div class='main-container'>
+	  <div class='navbar'>
+	  	<div class='nav-title'>
+	  		<a href='http://epihedron.com:5000'><strong>Epiblog</strong></a>
+	  	</div>
+	  	<div class='nav-menu'>
+	  		<ul class='nav-menu-list'>
+	  			<li>
+	  				<a href=''>Blog</a>
+	  			</li>
+	  			<li class='nav-meta-menu'>
+	  				<a id='appstab' href=''>Apps</a>
+	  				<ul id='appsdropdown' class='nav-dropdown'>
+	  					<li>
+	  						<a href='http://www.epihedron.com'>Adventurer</a>
+	  					</li>
+	  				</ul>
+	  			</li>
+	  			<li>
+	  				<a href='http://www.bullstudio.co'>Music</a>
+	  			</li>
+	  			<li>
+	  				<a href=''>Contact</a>
+	  			</li>
+	  		</ul>
+	  	</div>
+	  </div>
+	  <div class='body'>
+	  	{{{yield}}}
+	  </div>
+	  <div class='footer'>
+	  	<div class='foot-text'>
+	  		Epihedron
+	  	</div>
+	  	<div class='foot-logos'>
+	  		<ul>
+	  			<a href='https://www.github.com/13ruce1337/epiblog'><li><img src='/imgs/github.png' width='40' height='40'/></li></a>
+	  		</ul>
+	  	</div>
+	  </div>
+  </div>
 </body>

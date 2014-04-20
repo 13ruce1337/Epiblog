@@ -1,0 +1,17 @@
+{{#yield-styles}}  
+  <link href='/less/blog-admin.css' rel='stylesheet' type='text/css'/>
+{{/yield-styles}}
+<div class='md-container'>
+  <form method='post' class='account-form'>
+    <label class='account-form-label'>
+      Create Account
+    </label><br/>
+    <input type='text' name='user[username]' placeholder='User Name'/><br/>
+    <input type='text' name='user[firstname]' placeholder='First Name'/><br/>
+    <input type='text' name='user[lastname]' placeholder='Last Name'/><br/>
+    <input type='password' name='user[password]' placeholder='Password'/><br/>
+    <input type='password' placeholder='Password Again'/><br/>
+    <input type='button' class='btn' value='Create' name='create'/>
+    <input type='button' class='btn' value='Clear'/>
+  </form>
+</div>

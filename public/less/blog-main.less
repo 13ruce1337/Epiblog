@@ -1,22 +1,32 @@
+/*
+    Global CSS
+*/
 @import 'lessconfig';
 
+//main container
+.main-container {
+  min-height: 100%;
+  position: relative;
+}
+
+//navbar items
 .navbar {
-	position:absolute;
 	height:64px;
 	width:100%;
 	background-color:@dankpurp;
 	color:@white;
-	z-index:10;
 	.nav-title {
-		position:relative;
 		display:inline-block;
 		font-size:@lg-text;
 		font-family:Cinzel;
 		margin:.5% 5%;
 		float:left;
+    a {
+      text-decoration:none;
+      color:@white;
+    }
 	}
 	.nav-menu {
-		position:relative;
 		display:inline-block;
 		font-size:@md-text;
 		font-family:Balthazar;
@@ -49,10 +59,17 @@
 		}
 	}
 }
+
+.body{
+  padding:10px;
+  padding-bottom:50px;
+}
+
+//footer items
 .footer {
 	position:absolute;
-	bottom:0;
 	height:40px;
+  bottom:0;
 	background:@lightgray;
 	color:@darkgray;
 	width:100%;
@@ -71,4 +88,46 @@
 			}
 		}
 	}
+}
+
+//global element styling
+input {
+  -webkit-border-radius: @input-border-radius;
+  -moz-border-radius: @input-border-radius;
+  border-radius: @input-border-radius;
+  width: @md-input-width;
+  height: @md-input-height;
+  padding: 0 10px;
+  margin:3px 0;
+  font-size:@nm-text;
+}
+::-webkit-input-placeholder {
+  text-align: center;
+}
+::-moz-placeholder { 
+  text-align: center;
+}
+:-ms-input-placeholder {
+  text-align: center;
+}
+:-moz-placeholder { 
+  text-align: center;
+}
+.btn::-moz-focus-inner {
+    border:0;
+    padding:0;
+}
+.btn {
+  width:90px;
+  height:24px;
+  border:0 none;
+  border-radius:0;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  margin:3px;
+  padding:0;
+  background:@blue;
+  overflow:visible;
+  font:@nm-text Roboto;
+  color:@offwhite;
 }
